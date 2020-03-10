@@ -4,4 +4,7 @@ class User < ApplicationRecord
 
   has_many :journal_entries
   has_many :prompts, through: :journal_entries
+
+  # def gratitude_streak
+  # end
 end
