@@ -8,7 +8,7 @@ class Api::JournalEntriesController < ApplicationController
 
   def create
     @journal_entry = JournalEntry.new(
-                                      prompt_id: params[:prompt_id],
+                                      prompt_id: Prompt.pluck(:id).sample,
                                       user_id: params[:user_id], 
                                       date: params[:date],  
                                       body: params[:body],

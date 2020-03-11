@@ -3,5 +3,5 @@
   first_name: user.first_name, 
   last_name: user.last_name, 
   email: user.email,
-  # gratitude_streak: user.gratitude_streak
+  gratitude_streak: user.gratitude_streak
 }
