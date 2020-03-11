@@ -4,6 +4,7 @@
   user_id: journal_entry.user_id,
   date: journal_entry.date,
   body: journal_entry.body,
+  # prompt: 
   gratitude_level: journal_entry.gratitude_level,
   gratitude_change: journal_entry.gratitude_change
 }
