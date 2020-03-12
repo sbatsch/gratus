@@ -6,10 +6,25 @@ class User < ApplicationRecord
   has_many :prompts, through: :journal_entries
 
   def gratitude_streak
-    ordered_journal_entries = journal_entries.order(date: :desc)
+    ordered_journal_entries = journal_entries.order(date: :asc)
     count = 0
-    latest_entry = nil
+    last_date = Time.now.to_date
 
+    ordered_journal_entries.each do |current_entry|
+      if last_date == current_entry.date
+        count += 1
+      elsif last_date == current_entry.date - 1.day
+        count += 1
+        last_date = current_entry.date
+      else
+        break
+      end
+    end
+
+    return count 
+  end
+
+end
     # index = 0
     # while index < journal_entries.length - 1
     #   if ordered_journal_entries[index].date == ordered_journal_entries[index + 1].date
@@ -22,18 +37,3 @@ class User < ApplicationRecord
     #    index = index + 1 
     # end 
 
-    ordered_journal_entries.each do |current_entry|
-      if !latest_entry
-        latest_entry = current_entry
-      elsif latest_entry.date == current_entry.date
-      elsif latest_entry.date == current_entry.date + 1.day
-        count = count + 1
-        latest_entry = current_entry
-      else
-        break
-      end
-    end
-
-    return count 
-  end
-end
