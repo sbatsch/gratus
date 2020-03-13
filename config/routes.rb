@@ -6,11 +6,13 @@ Rails.application.routes.draw do
     patch '/journal_entries/:id' => 'journal_entries#update'
     delete 'journal_entries/:id' => 'journal_entries#destroy'
 
-    post "/users" => "users#create"
+    post '/users' => 'users#create'
     get '/users/:id' => 'users#show'
+    # get '/users/:id/report' => 'users#report'
 
-    post "/sessions" => "sessions#create"
+    post "/sessions" => 'sessions#create'
 
+    get '/prompts/:id' => 'prompts#show'
 
   end
 end

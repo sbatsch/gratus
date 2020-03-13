@@ -4,5 +4,6 @@
   last_name: user.last_name, 
   email: user.email,
   gratitude_streak: user.gratitude_streak,
-  journal_entries: user.journal_entries
+  journals_completed: user.journals_completed,
+  journal_entries: user.journal_entries.order(date: :desc)
 }

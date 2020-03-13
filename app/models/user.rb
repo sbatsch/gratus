@@ -7,12 +7,15 @@ class User < ApplicationRecord
 
   def gratitude_streak
     ordered_journal_entries = journal_entries.order(date: :asc)
-    count = 0
     last_date = Time.now.to_date
+    if journal_entries.last && journal_entries.last.date == last_date
+      count = 1
+    else
+      count = 0
+    end
 
     ordered_journal_entries.each do |current_entry|
       if last_date == current_entry.date
-        count += 1
       elsif last_date == current_entry.date - 1.day
         count += 1
         last_date = current_entry.date
@@ -22,6 +25,10 @@ class User < ApplicationRecord
     end
 
     return count 
+  end
+
+  def journals_completed
+    journal_entries.count
   end
 
 end

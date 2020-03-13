@@ -8,9 +8,9 @@ class Api::JournalEntriesController < ApplicationController
 
   def create
     @journal_entry = JournalEntry.new(
-                                      prompt_id: Prompt.pluck(:id).sample,
-                                      user_id: params[:user_id], 
-                                      date: params[:date],  
+                                      prompt_id: params[:prompt_id],
+                                      user_id: current_user.id, 
+                                      date: Time.now,  
                                       body: params[:body],
                                       gratitude_level: params[:gratitude_level],
                                       gratitude_change: params[:gratitude_change] 
@@ -32,7 +32,6 @@ class Api::JournalEntriesController < ApplicationController
 
     @journal_entry.prompt_id = params[:prompt_id] || @journal_entry.prompt_id
     @journal_entry.user_id = params[:user_id] || @journal_entry.user_id
-    @journal_entry.date = params[:date] || @journal_entry.date
     @journal_entry.body = params[:body] || @journal_entry.body
     @journal_entry.gratitude_level = params[:gratitude_level] || @journal_entry.gratitude_level
     @journal_entry.gratitude_change = params[:gratitude_change] || @journal_entry.gratitude_change

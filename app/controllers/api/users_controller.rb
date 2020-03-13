@@ -19,8 +19,18 @@ class Api::UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-
+    
     render 'show.json.jb'
   end 
+
+  # def report
+  #   if current_user && params[:id] == "current"
+  #     @user = current_user
+  #   else
+  #     @user = User.find(params[:id])
+  #   end
+    
+  #   render 'report.json.jb'
+  # end
   
 end

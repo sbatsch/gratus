@@ -1,0 +1,5 @@
+{
+  id: prompt.id,
+  content: prompt.content,
+  topic: prompt.topic
+}

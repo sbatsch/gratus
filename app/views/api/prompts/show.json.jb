@@ -1,0 +1,1 @@
+render partial: "prompt.json.jb", locals: { prompt: @prompt }
