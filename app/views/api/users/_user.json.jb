@@ -5,5 +5,10 @@
   email: user.email,
   gratitude_streak: user.gratitude_streak,
   journals_completed: user.journals_completed,
-  journal_entries: user.journal_entries.order(date: :desc)
+  journal_entries: user.journal_entries.order(date: :desc),
+  report: {
+    report_days: user.report_days,
+    formatted_report_days: user.formatted_report_days,
+    entries_per_day: user.entries_per_day
+  }
 }

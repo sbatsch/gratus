@@ -31,6 +31,24 @@ class User < ApplicationRecord
     journal_entries.count
   end
 
+  def report_days
+    num_of_days_for_report = 7
+
+    days = []
+    num_of_days_for_report.times do |index|
+       days << index.days.ago
+    end
+    return days 
+  end
+
+  def formatted_report_days
+    report_days.map {|day| day.strftime("%m/%d/%Y")}
+  end
+
+  def entries_per_day
+    report_days.map {|day| journal_entries.where(date: day).count}
+  end
+
 end
     # index = 0
     # while index < journal_entries.length - 1

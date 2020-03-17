@@ -1,6 +1,8 @@
 class Api::JournalEntriesController < ApplicationController
   before_action :authenticate_user
 
+  
+
   def index
     @journal_entries = JournalEntry.all
     render 'index.json.jb'
@@ -9,7 +11,7 @@ class Api::JournalEntriesController < ApplicationController
   def create
     @journal_entry = JournalEntry.new(
                                       prompt_id: params[:prompt_id],
-                                      user_id: current_user.id, 
+                                      user_id: current_user.id,
                                       date: Time.now,  
                                       body: params[:body],
                                       gratitude_level: params[:gratitude_level],
