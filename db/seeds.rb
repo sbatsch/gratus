@@ -42,3 +42,5 @@
 #               content: "We often get in the habit of focusing on ways to improve ourselves and achieve more. While this way of thinking can help us grow, we can also forget to appreciate the positive qualities we already possess. Think of a skill or personality trait for which you are grateful, jot it, down and say why. Remember: celebrate who you are before shifting your attention to who you want to become.",
 #               topic: 3
 #               )
+
+
