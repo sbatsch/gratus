@@ -29,13 +29,9 @@ class User < ApplicationRecord
     return count 
   end
 
-
-
   def journals_completed
     journal_entries.count
   end
-
-
 
   def report_days
     num_of_days_for_report = 7
@@ -54,9 +50,6 @@ class User < ApplicationRecord
   def entries_per_day
     report_days.map {|day| journal_entries.where(date: day).count}
   end
-
-
-
 
   def topic_breakdown
     topics = []
@@ -79,14 +72,16 @@ class User < ApplicationRecord
     return topic_array
   end
 
-
-
   def random_topic
-    
+    # topic_breakdown = [
+    #                   {:name=>"health", :y=>1}, 
+    #                   {:name=>"people", :y=>3}, 
+    #                   {:name=>"yourself", :y=>2}
+    #                   ]
+
     total = topic_breakdown.sum {|topic_hash| topic_hash[:y]}
 
     topic_percentages = []
-
     topic_breakdown.each do |topic_hash|
       topic_percentages << {
                             percentage: (topic_hash[:y]/total.to_f) * 100,
@@ -103,16 +98,74 @@ class User < ApplicationRecord
     end
   end
 
-end
-    # index = 0
-    # while index < journal_entries.length - 1
-    #   if ordered_journal_entries[index].date == ordered_journal_entries[index + 1].date
-    #   elsif ordered_journal_entries[index].date + 1.day == ordered_journal_entries[index + 1].date
-    #     count = count + 1
-    #   else
-    #     break
-    #   end
+############################################
 
-    #    index = index + 1 
-    # end 
+  def average(topic_name)
+    entries = journal_entries.select { |journal_entry| journal_entry.prompt.topic == topic_name }
+
+    count = entries.length
+    return 1 if count == 0
+
+    sum = entries.sum { |entry| entry.gratitude_level }
+    sum / count
+  end
+
+  def topic_percentages
+    nature_avg = average("nature")
+    yourself_avg = average("yourself")
+    people_avg = average("people")
+    health_avg = average("health")
+
+    total = nature_avg + yourself_avg + people_avg + health_avg
+
+    [
+      {
+        topic: 'nature',
+        percentage: (nature_avg/total.to_f) * 100
+      },
+      {
+        topic: 'yourself',
+        percentage: (yourself_avg/total.to_f) * 100
+      },
+      {
+        topic: 'people',
+        percentage: (people_avg/total.to_f) * 100
+      },
+      {
+        topic: 'health',
+        percentage: (health_avg/total.to_f) * 100
+      }
+    ]
+  end
+end 
+
+####################################################
+
+
+
+    # nature   - 9 # 90%
+    # nature   - 8 # 90%
+    # nature   - 8 # 90%
+    # nature   - 8 # 90%
+    # nature   - 1 # 90%
+    # nature   - 1 # 90%
+    # average 8.1
+
+    # yourself - 1 # 10%
+    # average 1
+
+    # people - ?
+    # average min 1
+
+    # total 9.1
+
+
+    # topic_percentages = []
+
+    # topic_percentages << {
+    #                     topic: 'nature',
+    #                     percentage: (8.5/9.1) * 100
+    #                     }
+
+
 
