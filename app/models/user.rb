@@ -35,6 +35,8 @@ class User < ApplicationRecord
     journal_entries.count
   end
 
+
+
   def report_days
     num_of_days_for_report = 7
 
@@ -52,6 +54,9 @@ class User < ApplicationRecord
   def entries_per_day
     report_days.map {|day| journal_entries.where(date: day).count}
   end
+
+
+
 
   def topic_breakdown
     topics = []
@@ -72,6 +77,30 @@ class User < ApplicationRecord
       topic_array << {name: topic, y: count}
     end
     return topic_array
+  end
+
+
+
+  def random_topic
+    
+    total = topic_breakdown.sum {|topic_hash| topic_hash[:y]}
+
+    topic_percentages = []
+
+    topic_breakdown.each do |topic_hash|
+      topic_percentages << {
+                            percentage: (topic_hash[:y]/total.to_f) * 100,
+                            topic: topic_hash[:name]
+                          }
+    end
+
+    roll_the_dice = rand(1..100)
+    percentage_boundary = 0
+
+    topic_percentages.each do |percentage_hash|
+      percentage_boundary += percentage_hash[:percentage]
+      return percentage_hash[:topic] if roll_the_dice <= percentage_boundary
+    end
   end
 
 end

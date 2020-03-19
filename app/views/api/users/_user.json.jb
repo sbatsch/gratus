@@ -10,6 +10,7 @@
     report_days: user.report_days,
     formatted_report_days: user.formatted_report_days,
     entries_per_day: user.entries_per_day,
-    topic_breakdown: user.topic_breakdown 
+    topic_breakdown: user.topic_breakdown,
+    random_topic: user.random_topic
   }
 }
