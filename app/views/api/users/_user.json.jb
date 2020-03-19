@@ -12,10 +12,7 @@
     entries_per_day: user.entries_per_day,
     topic_breakdown: user.topic_breakdown,
     random_topic: user.random_topic,
-    nature_average: user.nature_average,
-    yourself_average: user.yourself_average,
-    people_average: user.people_average,
-    health_average: user.health_average,
-    topic_percentages: user.topic_percentages,
+    topic_percents: user.topic_percents,
+    generate_topic: user.generate_topic
   }
 }

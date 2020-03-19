@@ -84,7 +84,7 @@ class User < ApplicationRecord
     topic_percentages = []
     topic_breakdown.each do |topic_hash|
       topic_percentages << {
-                            percentage: (topic_hash[:y]/total.to_f) * 100,
+                            percentage: (topic_hash[:y] / total.to_f) * 100,
                             topic: topic_hash[:name]
                           }
     end
@@ -110,7 +110,7 @@ class User < ApplicationRecord
     sum / count
   end
 
-  def topic_percentages
+  def topic_percents
     nature_avg = average("nature")
     yourself_avg = average("yourself")
     people_avg = average("people")
@@ -137,35 +137,21 @@ class User < ApplicationRecord
       }
     ]
   end
+
+  def generate_topic
+    # topic_percentages = [
+    #                      {:topic=>"health", :percentage=>33.0}
+    #                     ]
+
+    roll_the_dice = rand(1..100)
+    percentage_boundary = 0
+
+    topic_percents.each do |percentage_hash|
+      percentage_boundary += percentage_hash[:percentage]
+      return percentage_hash[:topic] if roll_the_dice <= percentage_boundary
+    end
+  end
+
+  ####################################################
+
 end 
-
-####################################################
-
-
-
-    # nature   - 9 # 90%
-    # nature   - 8 # 90%
-    # nature   - 8 # 90%
-    # nature   - 8 # 90%
-    # nature   - 1 # 90%
-    # nature   - 1 # 90%
-    # average 8.1
-
-    # yourself - 1 # 10%
-    # average 1
-
-    # people - ?
-    # average min 1
-
-    # total 9.1
-
-
-    # topic_percentages = []
-
-    # topic_percentages << {
-    #                     topic: 'nature',
-    #                     percentage: (8.5/9.1) * 100
-    #                     }
-
-
-
