@@ -98,6 +98,8 @@ class User < ApplicationRecord
     end
   end
 
+
+
 ############################################
 
   def average(topic_name)
@@ -153,4 +155,32 @@ class User < ApplicationRecord
 
   ####################################################
 
+  def enum_entries(enum)
+    entries = journal_entries.select { |journal_entry| journal_entry.gratitude_change == enum }
+
+      entries.length  
+  end
+
+  def change
+    no_change_amount = enum_entries("no_change")
+    less_amount = enum_entries("less")
+    more_amount = enum_entries("more")
+
+    [
+      {
+        category: 'no_change',
+        amount: no_change_amount
+      },
+      {
+        category: 'less',
+        amount: less_amount
+      },
+      {
+        category: 'more',
+        amount: more_amount
+      }
+    ]
+  end
+
 end 
+

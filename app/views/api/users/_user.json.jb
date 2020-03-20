@@ -13,6 +13,7 @@
     topic_breakdown: user.topic_breakdown,
     random_topic: user.random_topic,
     topic_percents: user.topic_percents,
-    generate_topic: user.generate_topic
+    generate_topic: user.generate_topic,
+    change: user.change
   }
 }
