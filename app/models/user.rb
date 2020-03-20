@@ -33,6 +33,8 @@ class User < ApplicationRecord
     journal_entries.count
   end
 
+
+####################################################################
   def report_days
     num_of_days_for_report = 7
 
@@ -50,6 +52,8 @@ class User < ApplicationRecord
   def entries_per_day
     report_days.map {|day| journal_entries.where(date: day).count}
   end
+
+  ####################################################################
 
   def topic_breakdown
     topics = []
@@ -71,6 +75,9 @@ class User < ApplicationRecord
     end
     return topic_array
   end
+
+  ####################################################################
+
 
   def random_topic
     # topic_breakdown = [
@@ -168,19 +175,39 @@ class User < ApplicationRecord
 
     [
       {
-        category: 'no_change',
-        amount: no_change_amount
+        name: 'no_change',
+        y: no_change_amount
       },
       {
-        category: 'less',
-        amount: less_amount
+        name: 'less',
+        y: less_amount
       },
       {
-        category: 'more',
-        amount: more_amount
+        name: 'more',
+        y: more_amount
       }
     ]
   end
+
+####################################################################
+
+  # def report_days
+  #   num_of_days_for_report = 7
+
+  #   days = []
+  #   num_of_days_for_report.times do |index|
+  #      days << index.days.ago
+  #   end
+  #   return days 
+  # end
+
+  # def formatted_report_days
+  #   report_days.map {|day| day.strftime("%m/%d/%Y")}
+  # end
+
+  # def entries_per_day
+  #   report_days.map {|day| journal_entries.where(date: day).count}
+  # end
 
 end 
 
