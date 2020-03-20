@@ -209,5 +209,77 @@ class User < ApplicationRecord
   #   report_days.map {|day| journal_entries.where(date: day).count}
   # end
 
+  # def nature_average
+  #   nature_entries = journal_entries.select {|journal_entry| journal_entry.prompt.nature? }
+  #   count = nature_entries.length
+  #   sum = 0
+
+  #   nature_entries.each do |journal_entry|
+  #     sum += journal_entry.gratitude_level
+  #   end
+
+  #   average = sum/count
+
+  #   if average < 1
+  #     1
+  #   else
+  #     average
+  #   end
+  # end
+
+  # def topic_percentages
+  #   nature_avg = nature_average
+  #   yourself_avg = yourself_average
+  #   people_avg = people_average
+  #   health_avg = health_average
+
+  #   total = nature_avg + yourself_avg + people_avg + health_avg
+
+  #   [
+  #     {
+  #       topic: 'nature',
+  #       percentage: (nature_avg/total.to_f) * 100
+  #     },
+  #     {
+  #       topic: 'yourself',
+  #       percentage: (yourself_avg/total.to_f) * 100
+  #     },
+  #     {
+  #       topic: 'nature',
+  #       percentage: (nature_avg/total.to_f) * 100
+  #     },
+  #     {
+  #       topic: 'nature',
+  #       percentage: (nature_avg/total.to_f) * 100
+  #     }
+  #   ]
+  # end
+
+
+
+  # nature   - 9 # 90%
+  # nature   - 8 # 90%
+  # nature   - 8 # 90%
+  # nature   - 8 # 90%
+  # nature   - 1 # 90%
+  # nature   - 1 # 90%
+  # average 8.1
+
+  # yourself - 1 # 10%
+  # average 1
+
+  # people - ?
+  # average min 1
+
+  # total 9.1
+
+
+  # topic_percentages = []
+
+  # topic_percentages << {
+  #                     topic: 'nature',
+  #                     percentage: (8.5/9.1) * 100
+  #                     }
+
 end 
 
