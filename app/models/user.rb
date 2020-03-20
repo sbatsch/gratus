@@ -93,7 +93,7 @@ class User < ApplicationRecord
     percentage_boundary = 0
 
     topic_percentages.each do |percentage_hash|
-      percentage_boundary += percentage_hash[:percentage]
+      percentage_boundary += percentage_hash[:percentage] 
       return percentage_hash[:topic] if roll_the_dice <= percentage_boundary
     end
   end
@@ -142,7 +142,6 @@ class User < ApplicationRecord
     # topic_percentages = [
     #                      {:topic=>"health", :percentage=>33.0}
     #                     ]
-
     roll_the_dice = rand(1..100)
     percentage_boundary = 0
 
