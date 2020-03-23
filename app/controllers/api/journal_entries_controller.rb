@@ -9,6 +9,7 @@ class Api::JournalEntriesController < ApplicationController
   end
 
   def create
+
     @journal_entry = JournalEntry.new(
                                       prompt_id: params[:prompt_id],
                                       user_id: current_user.id,
