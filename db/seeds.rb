@@ -1,46 +1,40 @@
-# # user = User.create(
-# #             first_name: "Steven",
-# #             last_name: "Batsch",
-# #             email: "sbatsch2@gmail.com",
-# #             password: "password",
-# #             password_confirmation: "password"  
-# #            )
-
-# user = User.last
-
-# prompt = Prompt.create(
-#               content: "Those who contemplate the beauty of the earth find reserves of strength that will endure as long as life lasts. — Rachel Carson
-
-#                 Pick a beautiful place in nature to write about. Why is this place special, and why are you grateful for this place?",
-#               topic: 0
-#              )
-
-# JournalEntry.create(
-#                     prompt_id: prompt.id, 
-#                     user_id: user.id, 
-#                     date: 1.day.ago, 
-#                     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis ullamcorper lectus in elementum. Nunc vel mauris turpis. Fusce vulputate libero ac libero placerat cursus. In felis lacus, feugiat eget ipsum id, vulputate tristique urna. Ut pharetra massa at metus scelerisque rutrum. Pellentesque quis venenatis quam. Mauris vel posuere mauris. Nam et vestibulum purus, ac varius risus. Praesent diam nisi, rhoncus at ultrices ut, porta et nulla. Nunc viverra commodo arcu at tristique. Suspendisse potenti. Suspendisse hendrerit sollicitudin viverra. Phasellus nec fringilla massa, eget sollicitudin nulla. Morbi tristique elit a tincidunt ultricies. Vivamus feugiat ultrices risus nec hendrerit.
-
-#                       Nam ut leo vitae nulla aliquet tincidunt. Aenean iaculis dolor sed risus aliquam sodales. Nam 
-#                       neque ligula, accumsan eget turpis rhoncus, efficitur placerat felis. Fusce vel dignissim eros. 
-#                       Pellentesque pellentesque faucibus convallis. Lorem ipsum dolor sit amet, consectetur adipiscing 
-#                       elit. Mauris et elementum orci. Integer sodales in lacus eget venenatis. Pellentesque metus 
-#                       turpis, efficitur eget suscipit quis, ornare et metus. Etiam et nisi id justo placerat lacinia. In 
-#                       tempor lobortis odio a vulputate. Morbi nec lobortis ante, at lacinia ligula. Praesent non egestas 
-#                       sapien."
-#                     # gratitude_level: 
-#                     # gratitude_change:
-#                    )
-
-
-# Prompt.create(
-#               content: "What have others done for you that has benefitted your life — even if you don't know who those people are?",
-#               topic: 2
-#               )
-
-# Prompt.create(
-#               content: "We often get in the habit of focusing on ways to improve ourselves and achieve more. While this way of thinking can help us grow, we can also forget to appreciate the positive qualities we already possess. Think of a skill or personality trait for which you are grateful, jot it, down and say why. Remember: celebrate who you are before shifting your attention to who you want to become.",
-#               topic: 3
-#               )
-
-
+# JournalEntry.create!([
+#   {prompt_id: 3, user_id: 1, date: "2020-03-23", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 8, gratitude_change: "more"},
+#   {prompt_id: 4, user_id: 1, date: "2020-03-22", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 0, gratitude_change: "less"},
+#   {prompt_id: 16, user_id: 1, date: "2020-03-21", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 9, gratitude_change: "more"},
+#   {prompt_id: 4, user_id: 1, date: "2020-03-23", body: "ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 10, gratitude_change: "more"},
+#   {prompt_id: 13, user_id: 1, date: "2020-03-20", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 2, gratitude_change: "less"},
+#   {prompt_id: 10, user_id: 1, date: "2020-03-20", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 8, gratitude_change: "more"},
+#   {prompt_id: 6, user_id: 1, date: "2020-03-19", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue porta enim nec dignissim. Mauris urna ante, fringilla sed velit vel, scelerisque vulputate leo. Nullam a tincidunt justo, in aliquet felis. In efficitur libero semper elit malesuada convallis. Aliquam feugiat urna ac nunc eleifend malesuada. Proin egestas aliquet tortor. Vestibulum consequat lorem sit amet sapien viverra, at auctor leo blandit. Integer tempus rhoncus rutrum. Phasellus mi neque, ultrices at orci non, aliquam hendrerit neque.", gratitude_level: 9, gratitude_change: "more"},
+#   {prompt_id: 2, user_id: 1, date: "2020-03-16", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat metus, posuere nec egestas at, ullamcorper et nulla. Sed felis odio, consequat quis elit pellentesque, aliquet vulputate nulla. In gravida eleifend ornare. Aliquam pretium tempus sapien id iaculis. In vitae tortor non dolor semper ultrices et vel nulla. Integer pharetra purus at ante maximus feugiat. Sed vel justo placerat, porta orci sed, malesuada ex. Donec elit turpis, scelerisque at rutrum ut, tristique sed diam.", gratitude_level: 7, gratitude_change: "more"},
+#   {prompt_id: 3, user_id: 1, date: "2020-03-17", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat metus, posuere nec egestas at, ullamcorper et nulla. Sed felis odio, consequat quis elit pellentesque, aliquet vulputate nulla. In gravida eleifend ornare. Aliquam pretium tempus sapien id iaculis. In vitae tortor non dolor semper ultrices et vel nulla. Integer pharetra purus at ante maximus feugiat. Sed vel justo placerat, porta orci sed, malesuada ex. Donec elit turpis, scelerisque at rutrum ut, tristique sed diam.", gratitude_level: 7, gratitude_change: "more"},
+#   {prompt_id: 16, user_id: 1, date: "2020-03-18", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat metus, posuere nec egestas at, ullamcorper et nulla. Sed felis odio, consequat quis elit pellentesque, aliquet vulputate nulla. In gravida eleifend ornare. Aliquam pretium tempus sapien id iaculis. In vitae tortor non dolor semper ultrices et vel nulla. Integer pharetra purus at ante maximus feugiat. Sed vel justo placerat, porta orci sed, malesuada ex. Donec elit turpis, scelerisque at rutrum ut, tristique sed diam.", gratitude_level: 8, gratitude_change: "more"},
+#   {prompt_id: 17, user_id: 1, date: "2020-03-18", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat metus, posuere nec egestas at, ullamcorper et nulla. Sed felis odio, consequat quis elit pellentesque, aliquet vulputate nulla. In gravida eleifend ornare. Aliquam pretium tempus sapien id iaculis. In vitae tortor non dolor semper ultrices et vel nulla. Integer pharetra purus at ante maximus feugiat. Sed vel justo placerat, porta orci sed, malesuada ex. Donec elit turpis, scelerisque at rutrum ut, tristique sed diam.", gratitude_level: 8, gratitude_change: "no_change"},
+#   {prompt_id: 7, user_id: 1, date: "2020-03-18", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat metus, posuere nec egestas at, ullamcorper et nulla. Sed felis odio, consequat quis elit pellentesque, aliquet vulputate nulla. In gravida eleifend ornare. Aliquam pretium tempus sapien id iaculis. In vitae tortor non dolor semper ultrices et vel nulla. Integer pharetra purus at ante maximus feugiat. Sed vel justo placerat, porta orci sed, malesuada ex. Donec elit turpis, scelerisque at rutrum ut, tristique sed diam.", gratitude_level: 10, gratitude_change: "more"},
+#   {prompt_id: 5, user_id: 1, date: "2020-03-15", body: "Hello sit amet, consectetur adipiscing elit. Aliquam erat metus, posuere nec egestas at, ullamcorper et nulla. Sed felis odio, consequat quis elit pellentesque, aliquet vulputate nulla. In gravida eleifend ornare. Aliquam pretium tempus sapien id iaculis. In vitae tortor non dolor semper ultrices et vel nulla. Integer pharetra purus at ante maximus feugiat. Sed vel justo placerat, porta orci sed, malesuada ex. Donec elit turpis, scelerisque at rutrum ut, tristique sed diam.", gratitude_level: 1, gratitude_change: "more"}
+# ])
+# Prompt.create!([
+#   {content: "When you contemplate the beauty of the Earth, you'll find reserves of strength that'll endure as long as life lasts. Choose a beautiful place in nature to write about today. Why is this spot so special, and why do you appreciate it?", topic: "nature"},
+#   {content: "What have others done for you that has benefitted your life — even if you don't know who those people are?", topic: "people"},
+#   {content: "We often get in the habit of focusing on ways to improve ourselves and achieve more. While this way of thinking can help us grow, we can also forget to appreciate the positive qualities we already possess. Think of a skill or personality trait for which you are grateful, jot it, down and say why. Remember: celebrate who you are before shifting your attention to who you want to become.", topic: "yourself"},
+#   {content: "What physical activities do you take for granted? How would it affect you to no longer be able to do those things?", topic: "health"},
+#   {content: "Write about a challenging person in your life (i.e. someone you frequently disagree with) and the qualities you like about this person.", topic: "people"},
+#   {content: "What is something you love(d) about your father or step-father?", topic: "people"},
+#   {content: "What artist, musician or author are you most grateful for and why?", topic: "people"},
+#   {content: "What experience in life are you really grateful for and why?", topic: "yourself"},
+#   {content: "What went right in your childhood and how does that serve you today?", topic: "yourself"},
+#   {content: "What went wrong in your childhood and how does that serve you today?", topic: "yourself"},
+#   {content: "What do you love most about the current season and why?", topic: "nature"},
+#   {content: "What fear are you currently facing?  How can you use this fear to your advantage?", topic: "yourself"},
+#   {content: "Who has taught you about unconditional love in the past or present? What have they meant to you in your life?", topic: "people"},
+#   {content: "Write down one good thing that happened to you today. How did it make you feel?", topic: "yourself"},
+#   {content: "What is something nice another person did for you today or this week? What did that action mean to you? How did it affect you?", topic: "people"},
+#   {content: "List 2 health struggles you experienced in life that you have overcome. What or who have helped you to overcome these trials?", topic: "health"},
+#   {content: "Who or what has positively contributed to your mental well-being? Show your appreciation for that person and/or those things.", topic: "health"},
+#   {content: "Write about 3 things that you love about the town, area, or neighborhood you live in?", topic: "nature"},
+#   {content: "Write about a time when a friend was there for you. What does that person mean to you, and how has your life been better with them in it?", topic: "people"}
+# ])
+# User.create!([
+#   {first_name: "Steven", last_name: "Batsch", email: "sbatsch2@gmail.com", password_digest: "$2a$12$gl.3Nvi4AyCB88cp34Q3reN1kufLUXY12G23an0eCZqTh/8.rNHRK"},
+#   {first_name: nil, last_name: "Batsch", email: "wbatsch2@gmail.com", password_digest: "$2a$12$9TlfETJNuLDCl6vXZYOFIujmvhFnYZ5AxQPuskX1jF5bvhxrZSRvG"}
+# ])
